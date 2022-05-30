@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <section id="firstsec">
+        <img src="images/bg.png" id="bg" />
+        <img src="images/moon.png" id="moon" />
+        <img src="images/trees.png" id="trees" />
+        <img src="images/waves.png" id="wave" />
+        <h1 id="text">ANDREI DALIMOS</h1>
+
+
+    </section>
+    <script type="text/javascript">
+        let bg = document.getElementById("bg");
+        let moon = document.getElementById("moon");
+        let keeb = document.getElementById("trees");
+        let wave = document.getElementById("wave");
+        let text = document.getElementById("text");
+
+        window.addEventListener('scroll', function () {
+            var value = window.scrollY;
+
+            bg.style.top = value * 0.5 + 'px';
+            moon.style.left = -value * 0.5 + 'px';
+            trees.style.top = -value * 0.15 + 'px';
+            wave.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+        })
+    </script>
+
+
+    <section class="info">
+        <h2 class="infoh">API PORTFOLIO</h2>
+        <p class="infop">
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+            lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
+        </p>
+
+
+    </section>
+
+    <div class="weather-app">
+        <div class="container">
+            <h3 class="brand">The Weather</h3>
+            <div>
+                <h1 class="temp">16&#176;</h1>
+                <div class="city-time">
+                    <h1 class="name" id="city-name">Dubai</h1>
+                    <small>
+                        <span class="time">06:09</span>
+                        -
+                        <span class="date">
+                            Monday Sep 19
+                        </span>
+                    </small>
+                </div>
+                <div class="weather">
+                    <img src="icons/day/113.png" class="icon" alt="icon" width="50px" height="50px" />
+                    <span class="condition">Cloudy</span>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <form class="locationInput">
+                <input type="text" class="search" placeholder="Search Location..." />
+                <button type="submit" class="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <ul class="cities">
+                <li class="city">New York</li>
+                <li class="city">California</li>
+                <li class="city">Paris</li>
+                <li class="city">Tokyo</li>
+            </ul>
+            <ul class="details">
+
+                <h4>Weather Details</h4>
+                <li>
+                    <span>Cloudy</span>
+                    <span class="cloud">89%</span>
+                </li>
+                <li>
+                    <span>Humidity</span>
+                    <span class="humidity">64%</span>
+                </li>
+                <li>
+                    <span>Wind</span>
+                    <span class="wind">8km/h</span>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+    <section class="imdb">
+        <form class="movieInput">
+            <input type="text" class="search" id="movieSearch" placeholder="Search Movie..." />
+            <button type="submit" class="submit2">
+                Search
+            </button>
+        </form>
+        <div id="imdb-search-results">
+        </div>
+    </section>
+
+
+
+    <section class="qrcode">
+        <p>QR Code</p>
+        <input type="text" class="input">
+        <button class="btn">Generate</button>
+        <img src="images/default.png" alt="Your QR code will show here" class="code">
+
+    </section>
+    <div id="toast">Successfully Generated</div>
+    <script src="qrcode.js"></script>
+
+
+
+
+
+
+
+    <div class="square"></div>
+    <script>
+        document.querySelector('.square').animate([
+
+        ])
+
+    </script>
+
+    <script>
+
+        function showNotification() {
+            const notification = new Notification("Message From Andrei!", {
+                body: "Welcome to my Website"
+            });
+        }
+
+
+        console.log(Notification.permission);
+
+        if (Notification.permission === "granted") {
+            // showNotification();
+        }
+        else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    showNotification();
+                }
+            });
+        }
+    </script>
+    <script src="weather.js"></script>
+    <script src="imdb.js"></script>
+</body>
+</html>
